@@ -56,11 +56,7 @@
             100% { box-shadow: 0 0 0 0 rgba(69, 160, 68, 0); }
         }
         ::-webkit-scrollbar { display: none; }
-
-        .safe-bottom {
-            padding-bottom: calc(160px + env(safe-area-inset-bottom));
-        }
-
+        
     </style>
 </head>
 <body class="antialiased select-none">
@@ -76,7 +72,7 @@
         <p class="text-muted text-[10px] tracking-[0.5em] mt-2 uppercase">Next Gen Roofing Systems</p>
     </header>
 
-    <main class="p-6 space-y-12 safe-bottom">
+    <main class="p-6 space-y-12">
 
         <section>
             <div class="flex items-center justify-between mb-4 px-2">
@@ -179,8 +175,19 @@
     <script>
         const tg = window.Telegram.WebApp;
         tg.expand();
+
+        const navbar = document.querySelector(".floating-island");
+        const main = document.querySelector("main");
+
+        if (navbar && main) {
+            const navHeight = navbar.offsetHeight + 40; // bottom-8
+            const safeInset = tg.safeAreaInset?.bottom || 0;
+            main.style.paddingBottom = `${navHeight + safeInset + 20}px`;
+        }
+
         tg.headerColor = '#050505';
         tg.backgroundColor = '#050505';
     </script>
+
 </body>
 </html>
