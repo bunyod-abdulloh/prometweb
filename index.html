@@ -55,6 +55,11 @@
             100% { box-shadow: 0 0 0 0 rgba(69, 160, 68, 0); }
         }
         ::-webkit-scrollbar { display: none; }
+
+        .safe-bottom {
+            padding-bottom: calc(160px + env(safe-area-inset-bottom));
+        }
+
     </style>
 </head>
 <body class="antialiased select-none">
@@ -70,7 +75,7 @@
         <p class="text-muted text-[10px] tracking-[0.5em] mt-2 uppercase">Next Gen Roofing Systems</p>
     </header>
 
-    <main class="p-6 space-y-12 pb-40">
+    <main class="p-6 space-y-12 safe-bottom">
 
         <section>
             <div class="flex items-center justify-between mb-4 px-2">
