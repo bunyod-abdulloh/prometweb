@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="build" content="2026-02-13-02">
     <title>Promet Obsidian</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -23,20 +22,24 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: #050505; 
+            color: #ffffff; 
+            margin: 0;
+            padding: 0;
+            /* Scroll body'ning o'zida bo'ladi */
+            overflow-y: auto;
+        }
 
         .glow-border {
-            position: relative;
             border: 1px solid rgba(69, 160, 68, 0.2);
             transition: all 0.5s ease;
         }
-        .glow-border:hover {
-            border-color: rgba(69, 160, 68, 0.8);
-            box-shadow: 0 0 20px rgba(69, 160, 68, 0.2);
-        }
 
         .floating-island {
-            background: rgba(15, 15, 15, 0.8);
+            background: rgba(15, 15, 15, 0.85);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -56,30 +59,25 @@
             100% { box-shadow: 0 0 0 0 rgba(69, 160, 68, 0); }
         }
         ::-webkit-scrollbar { display: none; }
-        
     </style>
 </head>
 <body class="antialiased select-none">
 
     <header class="pt-12 pb-6 px-6 text-center relative">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-emerald/10 blur-[100px] -z-10"></div>
-
         <div class="inline-block p-4 rounded-[2.5rem] bg-cardBg border border-white/5 shadow-2xl mb-4 group transition-all duration-700 hover:rotate-[360deg]">
             <img src="/static/images/logo.png" alt="Logo" class="h-16 w-16 object-contain grayscale group-hover:grayscale-0 transition-all">
         </div>
-
         <h1 class="text-3xl font-bold emerald-text-gradient tracking-tighter uppercase">Promet Ultra</h1>
         <p class="text-muted text-[10px] tracking-[0.5em] mt-2 uppercase">Next Gen Roofing Systems</p>
     </header>
 
-    <main id="content" class="p-6 space-y-12 overflow-y-auto">
-
+    <main id="content" class="p-6 space-y-12">
         <section>
             <div class="flex items-center justify-between mb-4 px-2">
                 <span class="text-xs font-bold text-muted uppercase tracking-widest">Smart Measurement</span>
                 <span class="text-[10px] bg-emerald/20 text-emerald px-2 py-1 rounded-md pulse-emerald">Live API</span>
             </div>
-
             <div class="grid grid-cols-2 gap-4">
                 <div class="col-span-2 glow-border bg-cardBg rounded-[2rem] p-6">
                     <div class="flex justify-between items-start mb-8">
@@ -89,7 +87,6 @@
                         </div>
                         <i class="fa-solid fa-microchip text-emerald text-xl"></i>
                     </div>
-
                     <div class="flex gap-4 mb-6">
                         <div class="flex-1 bg-obsidian border border-white/5 rounded-2xl p-4">
                             <input type="number" class="bg-transparent w-full outline-none text-2xl font-bold text-emerald" placeholder="00">
@@ -100,7 +97,6 @@
                             <span class="text-[8px] text-muted uppercase font-bold">Eni (m)</span>
                         </div>
                     </div>
-
                     <button class="w-full py-5 bg-emerald rounded-2xl font-black text-obsidian shadow-[0_0_30px_rgba(69,160,68,0.3)] active:scale-95 transition-all uppercase tracking-widest">
                         Natijani Olish
                     </button>
@@ -148,28 +144,27 @@
                 </div>
             </div>
         </section>
-
+        
+        <div id="spacer" class="h-24"></div>
     </main>
 
-    <div id="bottomNav"
-     class="fixed bottom-8 left-1/2 -translate-x-1/2 w-[90%] max-w-sm z-[100]">
-
+    <div id="bottomNav" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm z-[100]">
         <div class="floating-island p-2 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center justify-between">
-            <button class="w-14 h-14 rounded-full flex items-center justify-center text-emerald bg-emerald/10">
-                <i class="fa-solid fa-house-user text-xl"></i>
+            <button class="w-12 h-12 rounded-full flex items-center justify-center text-emerald bg-emerald/10">
+                <i class="fa-solid fa-house-user text-lg"></i>
             </button>
-            <button class="w-14 h-14 rounded-full flex items-center justify-center text-muted">
-                <i class="fa-solid fa-shapes text-xl"></i>
+            <button class="w-12 h-12 rounded-full flex items-center justify-center text-muted">
+                <i class="fa-solid fa-shapes text-lg"></i>
             </button>
-            <button class="w-16 h-16 bg-emerald rounded-full flex items-center justify-center text-obsidian shadow-[0_0_25px_rgba(69,160,68,0.5)] -translate-y-4">
-                <i class="fa-solid fa-plus text-2xl"></i>
+            <button class="w-14 h-14 bg-emerald rounded-full flex items-center justify-center text-obsidian shadow-[0_0_20px_rgba(69,160,68,0.4)] -translate-y-4">
+                <i class="fa-solid fa-plus text-xl"></i>
             </button>
-            <button class="w-14 h-14 rounded-full flex items-center justify-center text-muted relative">
-                <i class="fa-solid fa-shopping-bag text-xl"></i>
-                <span class="absolute top-2 right-2 w-2 h-2 bg-emerald rounded-full"></span>
+            <button class="w-12 h-12 rounded-full flex items-center justify-center text-muted relative">
+                <i class="fa-solid fa-shopping-bag text-lg"></i>
+                <span class="absolute top-2 right-2 w-1.5 h-1.5 bg-emerald rounded-full"></span>
             </button>
-            <button class="w-14 h-14 rounded-full flex items-center justify-center text-muted">
-                <i class="fa-solid fa-gear text-xl"></i>
+            <button class="w-12 h-12 rounded-full flex items-center justify-center text-muted">
+                <i class="fa-solid fa-gear text-lg"></i>
             </button>
         </div>
     </div>
@@ -177,25 +172,21 @@
     <script>
         const tg = window.Telegram.WebApp;
         tg.expand();
-
-        const main = document.getElementById("content");
-        const nav = document.getElementById("bottomNav");
-
-        function fixBottomOverlap() {
-            if (!main || !nav) return;
-
-            const navRect = nav.getBoundingClientRect();
-            const safeInset = tg.safeAreaInset?.bottom || 0;
-
-            main.style.paddingBottom =
-                `${navRect.height + safeInset + 24}px`;
-        }
-
-        fixBottomOverlap();
-        window.addEventListener("resize", fixBottomOverlap);
-
         tg.headerColor = '#050505';
         tg.backgroundColor = '#050505';
+
+        function adjustSpacer() {
+            const nav = document.getElementById("bottomNav");
+            const spacer = document.getElementById("spacer");
+            if (nav && spacer) {
+                // Bottom Navbar balandligi + 20px qo'shimcha joy
+                const safeInset = tg.safeAreaInset ? tg.safeAreaInset.bottom : 0;
+                spacer.style.height = (nav.offsetHeight + safeInset + 20) + "px";
+            }
+        }
+
+        window.addEventListener("load", adjustSpacer);
+        window.addEventListener("resize", adjustSpacer);
     </script>
 </body>
 </html>
